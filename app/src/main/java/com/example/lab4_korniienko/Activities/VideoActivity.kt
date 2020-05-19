@@ -15,11 +15,18 @@ class VideoActivity: AppCompatActivity() {
 
         val mediaController = MediaController(this)
         mediaController.setAnchorView(videoView)
-        val uriPath =
-            "android.resource://$packageName/raw/small"
+
+        val uriPath ="android.resource://$packageName/raw/small"
         videoView.setMediaController(mediaController)
         videoView.setVideoURI(Uri.parse(uriPath))
         videoView.requestFocus()
         videoView.start()
+
+        stpButton.setOnClickListener{
+            videoView.stopPlayback()
+            videoView.setMediaController(mediaController)
+            videoView.setVideoURI(Uri.parse(uriPath))
+            videoView.requestFocus()
+        }
     }
 }

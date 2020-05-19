@@ -14,6 +14,7 @@ class AudioActivity : AppCompatActivity() {
     private lateinit var runnable:Runnable
     private var handler: Handler = Handler()
     private var pause:Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_audio)
